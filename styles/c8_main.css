@@ -9,7 +9,8 @@ html {
 body {
 	font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
-    width: 800px;
+    width: 98%;
+	max-width: 960px;
     margin: 0 auto;
     border: 3px solid #931420;
     background-color: #fffded;
@@ -51,13 +52,15 @@ header img {
 	margin: 0;
 	padding: 0;
 	position: relative;
+	width: 100%;
 }
 #nav_menu ul li {
 	float: left;
+	width: calc(100% / 5);
 }
+
 #nav_menu ul li a {
     display: block;
-    width: 160px;
     text-align: center;
     padding: 1em 0;
     text-decoration: none;
@@ -87,7 +90,7 @@ header img {
 
 /* the styles for the section */
 section {
-	width: 525px;
+	width: calc(65% - 40px);
 	float: right;
 	padding: 0 20px 20px 20px;
 }
@@ -133,11 +136,13 @@ article img {
 	float: right;
 	margin: .5em 0 1em 1em;
 	border: 1px solid black;
+	max-width: 40%;
+	min-width: 150px;
 }
 
 /* the styles for the aside */
 aside {
-	width: 215px;
+	width: calc(35% - 20px);
 	float: right;
 	padding: 0 0 20px 20px;
 }
@@ -151,8 +156,13 @@ aside h3 {
 	font-size: 105%;
 	padding-bottom: .25em;
 }
+
 aside img {
 	padding-bottom: 1em;
+}
+
+aside div {
+	column-count: 2;
 }
 
 /* the styles for the footer */
@@ -166,3 +176,62 @@ footer p {
 	color: white;
 	padding: 1em 0;
 }
+
+#mobile_menu {
+	display: none;
+}
+
+@media (max-width: 300px) {
+	aside  a {
+		font-size: 85%;
+	}
+
+	section h1 {
+		font-size: 125%;
+	}
+
+	section h2, aside h2 {
+		font-size: 125%;
+	}
+
+	#nav_menu {
+		display: none;
+	}
+
+	#mobile_menu {
+		display: block;
+	}
+
+	#mobile_menu .slicknav_menu {
+		background-color: #800000;
+	}
+  }
+
+@media (max-width: 200px) {
+	header img {
+		float: none;
+	}
+
+	header {
+		float: center;
+		text-align: center;
+	}
+
+	section {
+		float: unset;
+	}
+
+	aside {
+		float: unset;
+		padding: 0 20px 20px 20px;
+		width: calc(100% - 40px);
+	}
+
+	article img {
+		max-width: 30%;
+	}
+	
+	body {
+		font-size: 90%;
+	}
+  }
